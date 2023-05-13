@@ -21,7 +21,7 @@
 <br/>
 <br/>
 
-# **skiftOS**: The delightful operating system
+# **skiftOS**: The anti-delightful operating system
 
 [![Build](https://github.com/skift-org/skift/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/skift-org/skift/actions/workflows/build.yml)
 [![License](https://img.shields.io/github/license/skift-org/skift)](https://opensource.org/licenses/MIT)
