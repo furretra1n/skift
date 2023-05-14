@@ -25,6 +25,10 @@ jobs:
 
       - name: Build Host
         run: osdk b
+
+      - name: Ls dir
+        run: ls
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
