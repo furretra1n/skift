@@ -28,5 +28,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: greentea-uefi64-image-${{ github.sha }}
-          path: C:\Tea\greenteaos-uefi64.iso
+          name: uefi64-image-${{ github.sha }}
+          path: skift-x86_64-limine.img.gz
