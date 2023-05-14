@@ -3,6 +3,7 @@
 #include <karm-sys/chan.h>
 #include <karm-sys/file.h>
 #include <karm-sys/mmap.h>
+#include <karm-sys/time.h>
 #include <png/spec.h>
 #include <qoi/spec.h>
 
@@ -65,9 +66,12 @@ static Res<Image> loadPng(Bytes bytes) {
 }
 
 static Res<Image> loadJpeg(Bytes bytes) {
+    auto start = Sys::now();
     auto jpeg = try$(Jpeg::Image::load(bytes));
     auto img = Image::alloc({jpeg.width(), jpeg.height()});
     try$(jpeg.decode(img));
+    auto end = Sys::now();
+    logInfo("media: jpeg decoding took {} ms", (end - start).toMSecs());
     return Ok(img);
 }
 
