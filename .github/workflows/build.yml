@@ -27,7 +27,7 @@ jobs:
         run: osdk b
 
       - name: Ls dir
-        run: ls meta && ls osdk/build
+        run: ls ~/.osdev && ls .osdev
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
