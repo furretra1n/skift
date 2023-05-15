@@ -11,7 +11,7 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Toolchains
-        run: sudo apt-get install clang lld llvm python3 git ninja-build libsdl2-dev nasm &&
+        run: sudo apt-get install clang 7zip lld llvm python3 git ninja-build libsdl2-dev nasm &&
              git clone https://github.com/cute-engineering/osdk && sudo pip install -e osdk/
 
       - name: Install Packages
@@ -25,10 +25,10 @@ jobs:
 
       - name: Build Host
         run: osdk b
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+      - name: zip everything
+        run: 7z a skift.zip ../skift
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: uefi64-image-${{ github.sha }}
-          path: skift-x86_64-limine.img.gz
+          name: skift-${{ github.sha }}
+          path: skift.zip
