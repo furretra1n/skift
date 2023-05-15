@@ -25,10 +25,9 @@ jobs:
 
       - name: Build Host
         run: osdk b
-
-      - name: Ls dir
-        run: ls && ls .osdev
-
+      - uses: actions/checkout@v2
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
